@@ -8,6 +8,7 @@ public class HangmanGame {
     private int currentAttempts;
     private Set<Character> guessedLetters;
 
+    protected boolean wonGame = false;
     public HangmanGame(String secretWord, int maxAttempts){
 
         this.secretWord=secretWord;
@@ -34,12 +35,18 @@ public class HangmanGame {
         }
         printGameStatus();
     }
+    public int getCurrentAttempts(){
+        return currentAttempts;
+    }
     public boolean isGameOver() {
         if (guessedWord.toString().equals(secretWord)) {
+            wonGame=true;
             System.out.println("Congratulations! You've guessed the word correctly.");
             return true;
         }
         if (currentAttempts >= maxAttempts) {
+            wonGame=false;
+
             System.out.println("Game Over! You've reached the maximum number of attempts.");
             return true;
         }
@@ -74,7 +81,7 @@ public class HangmanGame {
                 System.out.println(" ____  ");
                 System.out.println(" |   O   ");
                 System.out.println(" | \\|/  ");
-                System.out.println(" |   |   ");
+                System.out.println(" |  |   ");
                 System.out.println(" |       ");
                 break;
             case 4:
