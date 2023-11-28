@@ -91,7 +91,7 @@ public class HangmanGame {
                 System.out.println(" |   |   ");
                 System.out.println(" |  / \\   ");
                 break;
-            case default:
+            default:
                 System.out.println(" ____  ");
                 System.out.println(" |    ");
                 System.out.println(" |   ");
